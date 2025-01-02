@@ -1,0 +1,101 @@
+/* awa tabel */
+
+/* Atur agar scroll hanya muncul ketika kursor berada di atas tabel */
+.table-responsive {
+  overflow-x: auto;
+  max-height: 400px;
+  /* Sesuaikan dengan tinggi yang diinginkan */
+}
+
+/* Menyembunyikan scrollbar secara default */
+.table-responsive::-webkit-scrollbar {
+  display: none;
+}
+
+/* Menampilkan scrollbar ketika cursor berada di atas tabel */
+.table-responsive:hover::-webkit-scrollbar {
+  display: block;
+  height: 8px;
+  /* Ukuran scrollbar */
+  background-color: #f1f1f1;
+}
+
+/* Gaya untuk scrollbar */
+.table-responsive::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+/* Gaya untuk scrollbar ketika cursor berada di atasnya */
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Akhir tabel */
+
+/* awal sidebar */
+/* Menyembunyikan scrollbar secara default */
+#sidenav-main {
+  overflow-y: hidden;
+  transition: overflow-y 0.3s ease-in-out;
+  /* Menambahkan transisi agar lebih halus */
+}
+
+/* Menampilkan scrollbar saat hover di sisi sidebar */
+#sidenav-main:hover {
+  overflow-y: auto;
+  /* Scrollbar hanya aktif saat kursor di atas sidebar */
+}
+
+/* Scrollbar styling */
+#sidenav-main::-webkit-scrollbar {
+  width: 10px;
+  /* Lebar scrollbar */
+}
+
+#sidenav-main::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Warna latar belakang scrollbar */
+}
+
+#sidenav-main::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Warna scrollbar */
+  border-radius: 125px;
+  /* Sudut melengkung pada scrollbar */
+}
+
+#sidenav-main::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Warna scrollbar saat di-hover */
+}
+
+/* Styling tambahan untuk ikon */
+.nav-link i {
+  transition: transform 0.3s ease;
+}
+
+/* Efek ikon ketika hover */
+.nav-link:hover i {
+  transform: scale(1.1);
+  /* Meningkatkan ukuran ikon sedikit saat hover */
+}
+
+/* Membuat sidebar lebih responsif */
+@media (max-width: 768px) {
+  #sidenav-main {
+    position: absolute;
+    top: 0;
+    left: -250px;
+    /* Menyembunyikan sidebar pada ukuran layar kecil */
+    width: 250px;
+    height: 100vh;
+    transition: left 0.3s ease;
+  }
+
+  #sidenav-main.show {
+    left: 0;
+    /* Menampilkan sidebar dengan transisi */
+  }
+}
+/* akhir sidebar */
